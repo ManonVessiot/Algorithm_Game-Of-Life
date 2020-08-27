@@ -55,12 +55,15 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\ViewMapGameOfLife.cs" />
-    <Compile Include="Assets\Scripts\Cells.cs" />
+    <Compile Include="Assets\Scripts\ViewMapGameOfLife_ScreenEditor.cs" />
     <Compile Include="Assets\Scripts\Map.cs" />
+    <Compile Include="Assets\Scripts\ViewMapGameOfLife_Screeen.cs" />
+    <Compile Include="Assets\Scripts\Cells.cs" />
     <Compile Include="Assets\Scripts\MapPosition.cs" />
     <Compile Include="Assets\Scripts\GameOfLife.cs" />
-    <Compile Include="Assets\Scripts\ViewMapGameOfLife_Editor.cs" />
+    <Compile Include="Assets\Scripts\ViewMapGameOfLife_Gizmos.cs" />
+    <Compile Include="Assets\Scripts\ViewMapGameOfLife_GizmosEditor.cs" />
+    <Compile Include="Assets\Scripts\ViewMap.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

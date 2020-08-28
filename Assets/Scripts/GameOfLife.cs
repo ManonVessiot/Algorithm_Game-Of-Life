@@ -4,18 +4,12 @@ using UnityEngine;
 
 namespace GameOfLife
 {
+    [System.Serializable]
     public class GameOfLife
     {
         public Map _mapOfLife;
-
-        public GameOfLife(Map mapOfLife)
-        {
-            _mapOfLife = mapOfLife;
-            if (_mapOfLife == null)
-            {
-                Debug.Log("_mapOfLife null");
-            }
-        }
+        public List<int> _numberOfNeighbourToLive;
+        public List<int> _numberOfNeighbourToBeBorn;
 
         public Map EvolveNextStage()
         {
@@ -28,11 +22,11 @@ namespace GameOfLife
             {
                 for (int h = 0; h < height; h++)
                 {
-                    if (_mapOfLife._map[w, h]._living && (_mapOfLife._map[w, h]._livingNeighbour == 2 || _mapOfLife._map[w, h]._livingNeighbour == 3))
+                    if (_mapOfLife._map[w, h]._living && _numberOfNeighbourToLive.Contains(_mapOfLife._map[w, h]._livingNeighbour))
                     {
                         livingCells.Add(new MapPosition(w, h));
                     }
-                    else if (!_mapOfLife._map[w, h]._living && _mapOfLife._map[w, h]._livingNeighbour == 3)
+                    else if (!_mapOfLife._map[w, h]._living && _numberOfNeighbourToBeBorn.Contains(_mapOfLife._map[w, h]._livingNeighbour))
                     {
                         livingCells.Add(new MapPosition(w, h));
                     }

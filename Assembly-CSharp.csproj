@@ -56,13 +56,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\MapToBuild.cs" />
+    <Compile Include="Assets\Scripts\ViewMap.cs" />
     <Compile Include="Assets\Scripts\Map.cs" />
     <Compile Include="Assets\Scripts\ViewMap_Screeen.cs" />
     <Compile Include="Assets\Scripts\Cells.cs" />
     <Compile Include="Assets\Scripts\MapPosition.cs" />
     <Compile Include="Assets\Scripts\GameOfLife.cs" />
     <Compile Include="Assets\Scripts\ViewMap_Gizmos.cs" />
-    <Compile Include="Assets\Scripts\ViewMap.cs" />
+    <Compile Include="Assets\Scripts\BuildObstaclesWithMouse.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

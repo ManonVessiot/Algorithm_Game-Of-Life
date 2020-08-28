@@ -13,7 +13,9 @@ namespace GameOfLife
         public float _secondBetweenStages = 1f;
 
         [System.NonSerialized]
-        public bool solving = false;
+        public bool _solving = false;
+
+        public Vector2 _cellSize = Vector2.one;
 
         int stage = 0;
         
@@ -28,12 +30,12 @@ namespace GameOfLife
         }
         IEnumerator Solve()
         {
-            solving = true;
-            while (solving)
+            _solving = true;
+            while (_solving)
             {
                 yield return new WaitForSeconds(_secondBetweenStages);
                 Debug.Log("stage : " + stage++);
-                solving = !EvolveGameNextStage();
+                _solving = !EvolveGameNextStage();
             }
         }
         public bool EvolveGameNextStage()
@@ -51,7 +53,7 @@ namespace GameOfLife
         public void StopSolving()
         {
             StopAllCoroutines();
-            solving = false;
+            _solving = false;
         }
 
         public virtual void Reset()
@@ -71,7 +73,7 @@ namespace GameOfLife
             stage = 0;
             Map map = new Map(_viewMap._width, _viewMap._height, _viewMap._livingCells);
             _gameOfLifeRules._mapOfLife = map;
-            solving = false;
+            _solving = false;
             UpdateView();
         }
 

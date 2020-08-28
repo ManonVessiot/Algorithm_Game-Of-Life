@@ -262,6 +262,7 @@ MonoBehaviour:
     _numberOfNeighbourToBeBorn: 03000000
   _epsilonBetweenCells: {x: 0, y: 0}
   _secondBetweenStages: 0.25
+  _cellSize: {x: 1, y: 1}
   _colorOfLivingCells: {r: 0.08677466, g: 0.4716981, b: 0.08677466, a: 1}
   _colorOfDeadCells: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 1}
   _cellImage: {fileID: 5317527859234111718, guid: 0d798ae11faa4fc40a6707164ddea0db, type: 3}
@@ -529,6 +530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2123950934}
   - component: {fileID: 2123950935}
+  - component: {fileID: 2123950936}
   m_Layer: 0
   m_Name: ViewMap
   m_TagString: Untagged
@@ -562,23 +564,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9819b8d1a8771e74fb416fb994174273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _width: 15
-  _height: 15
-  _livingCells:
-  - _x: 5
-    _y: 7
-  - _x: 5
-    _y: 6
-  - _x: 6
-    _y: 8
-  - _x: 6
-    _y: 5
-  - _x: 7
-    _y: 7
-  - _x: 7
-    _y: 6
-  - _x: 7
-    _y: 8
+  _width: 30
+  _height: 30
+  _livingCells: []
   _cellShift:
     _x: 0
     _y: 0
+--- !u!114 &2123950936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123950933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1d6840dd5ac74439d00b1a52f9ac2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _map: {fileID: 2123950935}
+  _viewMap: {fileID: 762858009}

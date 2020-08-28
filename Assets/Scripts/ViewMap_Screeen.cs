@@ -14,7 +14,6 @@ namespace GameOfLife
         Image[,] _mapGameObjects;
 
         Vector2 _ScreenSize;
-        Vector2 _cellSizeScreen;
 
         private void Awake()
         {
@@ -23,8 +22,8 @@ namespace GameOfLife
 
         public override void Reset()
         {
-            _cellSizeScreen.x = _ScreenSize.x / (float)_viewMap._width;
-            _cellSizeScreen.y = _ScreenSize.y / (float)_viewMap._height;
+            _cellSize.x = _ScreenSize.x / (float)_viewMap._width;
+            _cellSize.y = _ScreenSize.y / (float)_viewMap._height;
 
             if (_mapGameObjects == null || (_mapGameObjects.GetLength(0) != _viewMap._width || _mapGameObjects.GetLength(1) != _viewMap._height))
             {
@@ -59,7 +58,7 @@ namespace GameOfLife
                 for (int h = 0; h < _viewMap._height; h++)
                 {
                     RectTransform rect = _mapGameObjects[w, h].GetComponent<RectTransform>();
-                    rect.sizeDelta = new Vector2(_cellSizeScreen.x, _cellSizeScreen.y) - _epsilonBetweenCells;
+                    rect.sizeDelta = new Vector2(_cellSize.x, _cellSize.y) - _epsilonBetweenCells;
                 }
             }
 
@@ -83,7 +82,7 @@ namespace GameOfLife
         }
         Vector3 GetScreenPostionOfNode(int w, int h)
         {
-            Vector3 position = new Vector3((w + 0.5f) * _cellSizeScreen.x, (h + 0.5f) * _cellSizeScreen.y, 0);
+            Vector3 position = new Vector3((w + 0.5f) * _cellSize.x, (h + 0.5f) * _cellSize.y, 0);
             return position;
         }
     }

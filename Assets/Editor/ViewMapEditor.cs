@@ -10,7 +10,7 @@ namespace GameOfLife
         {
             ViewMap viewMap = (ViewMap)target;
 
-            GUI.enabled = (!Application.isPlaying || !viewMap.solving);
+            GUI.enabled = (!Application.isPlaying || !viewMap._solving);
             if (DrawDefaultInspector() && Application.isPlaying)
             {
                 viewMap.Reset();
@@ -19,7 +19,7 @@ namespace GameOfLife
 
             if (Application.isPlaying)
             {
-                if (viewMap.solving)
+                if (viewMap._solving)
                 {
                     if (GUILayout.Button("Stop solving"))
                     {
@@ -38,7 +38,7 @@ namespace GameOfLife
 
                 if (GUILayout.Button("Reset"))
                 {
-                    if (viewMap.solving)
+                    if (viewMap._solving)
                     {
                         Debug.Log("Stop solving");
                         viewMap.StopSolving();

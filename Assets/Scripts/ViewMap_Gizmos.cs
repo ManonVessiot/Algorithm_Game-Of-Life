@@ -6,8 +6,6 @@ namespace GameOfLife
 {
     public class ViewMap_Gizmos : ViewMap
     {
-        public Vector2 _cellSize = Vector2.one;
-
         private void OnValidate()
         {
             Reset();
